@@ -6,8 +6,8 @@ import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
 import 'package:vivavideos/features/movies/domain/entities/movies.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
-import '../../../../fixtures/mocked_movies.dart' as MockedMovies;
-import '../../../../fixtures/mocked_moviesModel.dart' as MockedMoviesModel;
+import '../../../../fixtures/mocked_movies.dart' as mocked_movies;
+import '../../../../fixtures/mocked_movies_model.dart' as mocked_movies_model;
 
 const List<MovieItem> movies = [
   MovieItem(
@@ -15,8 +15,8 @@ const List<MovieItem> movies = [
 ];
 
 void main() {
-  MoviesModel tMoviesModel = MockedMovies.movies;
-  Map mockedMoviesModel = MockedMoviesModel.result;
+  MoviesModel tMoviesModel = mocked_movies.movies;
+  Map mockedMoviesModel = mocked_movies_model.result;
 
   final Map<String, dynamic> jsonMap = json.decode(fixture('movies.json'));
   test('should be a subclass of Movie entity', () async {
@@ -27,7 +27,7 @@ void main() {
   group('fromJson', () {
     test('should return a valid model when the Json is getter', () async {
       //  arrange
-      final Map<String, dynamic> jsonMap = json.decode(fixture('movies.json'));
+      //final Map<String, dynamic> jsonMap = json.decode(fixture('movies.json'));
 
       //  act
       final result = MoviesModel.fromJson(jsonMap);

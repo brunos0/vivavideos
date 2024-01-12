@@ -1,6 +1,8 @@
+/* spell-checker: disable */
+
 import 'package:vivavideos/features/movies/data/models/movies_model.dart';
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
-import 'package:vivavideos/features/movies/domain/entities/movies.dart';
+//import 'package:vivavideos/features/movies/domain/entities/movies.dart';
 
 MoviesModel movies = const MoviesModel(movies: [
   MovieItem(

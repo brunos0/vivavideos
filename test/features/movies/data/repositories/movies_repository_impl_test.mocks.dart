@@ -10,7 +10,8 @@ import 'package:vivavideos/core/error/failures.dart' as _i5;
 import 'package:vivavideos/core/platform/network_info.dart' as _i6;
 import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_source.dart'
     as _i2;
-import 'package:vivavideos/features/movies/domain/entities/movies.dart' as _i4;
+import 'package:vivavideos/features/movies/data/models/movies_model.dart'
+    as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -31,16 +32,17 @@ import 'package:vivavideos/features/movies/domain/entities/movies.dart' as _i4;
 class MockMoviesRemoteDataSource extends _i1.Mock
     implements _i2.MoviesRemoteDataSource {
   @override
-  _i3.Future<(_i4.Movies?, _i5.Failure?)> getMovies() => (super.noSuchMethod(
+  _i3.Future<(_i4.MoviesModel?, _i5.Failure?)> getMovies() =>
+      (super.noSuchMethod(
         Invocation.method(
           #getMovies,
           [],
         ),
         returnValue:
-            _i3.Future<(_i4.Movies?, _i5.Failure?)>.value((null, null)),
+            _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>.value((null, null)),
         returnValueForMissingStub:
-            _i3.Future<(_i4.Movies?, _i5.Failure?)>.value((null, null)),
-      ) as _i3.Future<(_i4.Movies?, _i5.Failure?)>);
+            _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>.value((null, null)),
+      ) as _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>);
 }
 
 /// A class which mocks [NetworkInfo].

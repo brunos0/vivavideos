@@ -1,17 +1,11 @@
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
 import 'package:vivavideos/features/movies/domain/entities/movies.dart';
-import 'dart:convert';
-import 'package:vivavideos/core/util/fixture.dart';
+//import 'dart:convert';
+//import 'package:vivavideos/core/util/fixture.dart';
 
 class MoviesModel extends Movies {
   const MoviesModel({required List<MovieItem> movies}) : super(movies: movies);
-  /*
-  {
-    jsonMap = json.decode(fixture('/movies.json'));
-  }
 
-  late Map<String, dynamic> jsonMap;
-*/
   factory MoviesModel.fromJson(Map<String, dynamic> json) {
     List<MovieItem> movies = [];
 
@@ -30,12 +24,12 @@ class MoviesModel extends Movies {
   }
 
   Map<String, List<Map<String, String>>> toJson() {
-    List<Map<String, String>> moveitem = [];
+    List<Map<String, String>> moveItem = [];
 
     int listSize = movies.length;
 
     for (int i = 0; i < listSize; i++) {
-      moveitem.add(
+      moveItem.add(
         {
           "originalTitle": movies[i].originalTitle,
           "overview": movies[i].overview,
@@ -43,6 +37,6 @@ class MoviesModel extends Movies {
         },
       );
     }
-    return {"result": moveitem};
+    return {"result": moveItem};
   }
 }
