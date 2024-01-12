@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:vivavideos/core/error/error.dart';
+import 'package:vivavideos/core/error/failures.dart';
 import 'package:vivavideos/core/usecases/usecase.dart';
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
 import 'package:vivavideos/features/movies/domain/entities/movies.dart';
-import 'package:vivavideos/features/movies/domain/repositories/movies.repository.dart';
+import 'package:vivavideos/features/movies/domain/repositories/movies_repository.dart';
 import 'package:vivavideos/features/movies/domain/usecases/get_movies.dart';
 
 @GenerateNiceMocks([

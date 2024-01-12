@@ -6,9 +6,9 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:vivavideos/core/error/error.dart' as _i5;
+import 'package:vivavideos/core/error/failures.dart' as _i5;
 import 'package:vivavideos/features/movies/domain/entities/movies.dart' as _i4;
-import 'package:vivavideos/features/movies/domain/repositories/movies.repository.dart'
+import 'package:vivavideos/features/movies/domain/repositories/movies_repository.dart'
     as _i2;
 
 // ignore_for_file: type=lint
