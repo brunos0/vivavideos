@@ -19,9 +19,10 @@ class MoviesRepositoryImpl implements MoviesRepository {
     bool isConnected = await networkInfo.isConnected;
     if (isConnected) {
       try {
-        final moviesModel = await remoteDataSource.getMovies();
+        final moviesModel =
+            await remoteDataSource.getMovies(); //retorna apenas um tipo de dado
 
-        return moviesModel;
+        return (moviesModel, null); // mas repositório retorna dois
       } on ServerException {
         return (null, ServerFailure());
       }

@@ -6,8 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:vivavideos/core/error/failures.dart' as _i5;
-import 'package:vivavideos/core/platform/network_info.dart' as _i6;
+import 'package:vivavideos/core/platform/network_info.dart' as _i5;
 import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_source.dart'
     as _i2;
 import 'package:vivavideos/features/movies/data/models/movies_model.dart'
@@ -32,23 +31,20 @@ import 'package:vivavideos/features/movies/data/models/movies_model.dart'
 class MockMoviesRemoteDataSource extends _i1.Mock
     implements _i2.MoviesRemoteDataSource {
   @override
-  _i3.Future<(_i4.MoviesModel?, _i5.Failure?)> getMovies() =>
-      (super.noSuchMethod(
+  _i3.Future<_i4.MoviesModel?> getMovies() => (super.noSuchMethod(
         Invocation.method(
           #getMovies,
           [],
         ),
-        returnValue:
-            _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>.value((null, null)),
-        returnValueForMissingStub:
-            _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>.value((null, null)),
-      ) as _i3.Future<(_i4.MoviesModel?, _i5.Failure?)>);
+        returnValue: _i3.Future<_i4.MoviesModel?>.value(),
+        returnValueForMissingStub: _i3.Future<_i4.MoviesModel?>.value(),
+      ) as _i3.Future<_i4.MoviesModel?>);
 }
 
 /// A class which mocks [NetworkInfo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
+class MockNetworkInfo extends _i1.Mock implements _i5.NetworkInfo {
   @override
   _i3.Future<bool> get isConnected => (super.noSuchMethod(
         Invocation.getter(#isConnected),

@@ -3,5 +3,5 @@ import 'package:vivavideos/features/movies/data/models/movies_model.dart';
 //import 'package:vivavideos/features/movies/domain/entities/movies.dart';
 
 abstract class MoviesRemoteDataSource {
-  Future<(MoviesModel?, Failure?)> getMovies();
+  Future<MoviesModel?> getMovies();
 }

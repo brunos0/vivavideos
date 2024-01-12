@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
+import 'package:vivavideos/core/error/exceptions.dart';
 import 'package:vivavideos/core/error/failures.dart';
 import 'package:vivavideos/core/platform/network_info.dart';
 import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_source.dart';
@@ -19,16 +20,28 @@ void main() {
   late MoviesRepositoryImpl repository;
   late MockMoviesRemoteDataSource mockMoviesRemoteDataSource;
   late MockNetworkInfo mockNetworkInfo;
-  const mockResult = (
-    MoviesModel(movies: [
-      MovieItem(
-          originalTitle: 'titanic',
-          overview: 'E afundou',
-          urlCover: 'teste.jpeg'),
-    ]),
-    null
+  const mockDataSourceResult = MoviesModel(movies: [
+    MovieItem(
+        originalTitle: 'titanic',
+        overview: 'E afundou',
+        urlCover: 'navioAfundando.jpeg'),
+  ]);
+  const mockRepositoryResult = (
+    mockDataSourceResult,
+    null,
   );
+
   final mockNoInternet = (null, NoInternetException());
+  final mockServerException = (null, ServerException());
+
+  void dataSourceGetMovies() => when(mockMoviesRemoteDataSource.getMovies())
+      .thenAnswer((_) async => mockDataSourceResult);
+
+  void deviceOnline() =>
+      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+
+  void deviceOffline() =>
+      when(mockNetworkInfo.isConnected).thenAnswer((_) async => false);
 
   setUp(() {
     mockMoviesRemoteDataSource = MockMoviesRemoteDataSource();
@@ -40,23 +53,10 @@ void main() {
   });
 
   group('getMovies', () {
-/*
-  test('should get movies for the repository', () async {
-    // arrange
-    //when()
-    // act
-
-    // assert
-  });
-
-  });
-  
-  */
     test('should check if the device is online', () async {
       // arrange
-      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockMoviesRemoteDataSource.getMovies())
-          .thenAnswer((_) async => mockResult);
+      deviceOnline();
+      dataSourceGetMovies();
 
       // act
       repository.getMovies();
@@ -64,46 +64,39 @@ void main() {
       //assert
       verify(mockNetworkInfo.isConnected);
     });
-  });
 
-  group('getMovies', () {
-    setUp(
-        () => when(mockNetworkInfo.isConnected).thenAnswer((_) async => true));
     test('should get movies for the repository', () async {
       // arrange
-
-      when(mockMoviesRemoteDataSource.getMovies())
-          .thenAnswer((_) async => mockResult);
+      deviceOnline();
+      dataSourceGetMovies();
       // act
-      final result = await repository.getMovies();
+      final (success, failure) = await repository.getMovies();
       // assert
-      expect(result, mockResult);
+      expect(success, mockRepositoryResult);
     });
 
-    test('should get movies for the repository', () async {
+    test(
+        'should throw a ServerFailure when device is online but Api not response',
+        () async {
       // arrange
-
-      when(mockMoviesRemoteDataSource.getMovies())
-          .thenAnswer((_) async => mockResult);
+      deviceOnline();
+      when(mockMoviesRemoteDataSource.getMovies()).thenThrow(ServerException());
       // act
-      final result = await repository.getMovies();
+      final (success, failure) = await repository.getMovies();
       // assert
-      expect(result, mockResult);
+      expect(failure, ServerFailure());
     });
   });
 
   group('getMovies', () {
-    setUp(
-        () => when(mockNetworkInfo.isConnected).thenAnswer((_) async => false));
     test('should throw a NoInternetException when device is offline', () async {
       // arrange
-
-      when(mockMoviesRemoteDataSource.getMovies())
-          .thenAnswer((_) async => mockResult);
+      deviceOffline();
+      dataSourceGetMovies();
       // act
-      final result = await repository.getMovies();
+      final (success, failure) = await repository.getMovies();
       // assert
-      expect(result, mockNoInternet);
+      expect(success, mockNoInternet);
     });
   });
 }

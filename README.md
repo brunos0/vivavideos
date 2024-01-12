@@ -20,3 +20,7 @@ dart run build_runner build --delete-conflicting-outputs;
 
 1234567
 89
+
+
+convert utf-8 to iso-8859-1 to easylly mock jsons
+https://www.motobit.com/util/charset-codepage-conversion.asp
