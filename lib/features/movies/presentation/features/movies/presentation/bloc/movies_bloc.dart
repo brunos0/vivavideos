@@ -18,14 +18,14 @@ import 'package:vivavideos/features/movies/presentation/features/movies/presenta
 import 'package:vivavideos/features/movies/domain/usecases/get_movies.dart';
 
 const String serverFailureMessage = 'Server Failure';
-const String cacheFailureMessage = 'Cache Failure';
+const String noInternetFailureMessage = 'No Internet Failure';
 
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   MoviesBloc({
     required this.getMovies,
   }) : super(Empty()) {
     on<MoviesEvent>((MoviesEvent event, Emitter<MoviesState> emit) async {
-      if (event is GetMovies) {
+      if (event is GetMoviesEvent) {
         emit(Loading());
         final (movies, failure) = await getMovies(NoParams());
 
@@ -53,8 +53,8 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     switch (failure.runtimeType) {
       case ServerFailure:
         return serverFailureMessage;
-      case CacheFailure:
-        return cacheFailureMessage;
+      case NoInternetException:
+        return noInternetFailureMessage;
       default:
         return 'unexpected error';
     }
