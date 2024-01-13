@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
@@ -8,7 +10,6 @@ import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_s
 import 'package:vivavideos/features/movies/data/models/movies_model.dart';
 import 'package:vivavideos/features/movies/data/repositories/movies_repository_impl.dart';
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
-//import 'package:vivavideos/features/movies/domain/entities/movies.dart';
 
 @GenerateNiceMocks([
   MockSpec<MoviesRemoteDataSource>(),
@@ -32,7 +33,6 @@ void main() {
   );
 
   final mockNoInternet = (null, NoInternetException());
-  final mockServerException = (null, ServerException());
 
   void dataSourceGetMovies() => when(mockMoviesRemoteDataSource.getMovies())
       .thenAnswer((_) async => mockDataSourceResult);

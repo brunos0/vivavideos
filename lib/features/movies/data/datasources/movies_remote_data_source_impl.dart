@@ -3,12 +3,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:vivavideos/core/error/exceptions.dart';
-import 'package:vivavideos/core/error/failures.dart';
 import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_source.dart';
 import 'package:vivavideos/features/movies/data/models/movies_model.dart';
-import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
-//import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
-//import 'package:vivavideos/features/movies/domain/entities/movies.dart';
+
+String tmdbApiKey = const String.fromEnvironment('API_KEY_TMDB');
 
 class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
   const MoviesRemoteDataSourceImpl({required this.client});
@@ -21,8 +19,7 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
         Uri.parse('https://api.themoviedb.org/3/discover/movie'),
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOGM5NzNiY2FhYzg0NzkyZGQ0NDBhMTZkMjgwNzcyNyIsInN1YiI6IjY1OWViMDkzYjM5ZTM1MDFhNjlkNGM2NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MZrj8eRqkCXysrC54GQGuH2Tl2jfRuFWOWQoutY0jXc'
+          'Authorization': 'Bearer $tmdbApiKey'
         });
     if (response.statusCode == 200) {
       return (MoviesModel.fromJson(json.decode(response.body)));

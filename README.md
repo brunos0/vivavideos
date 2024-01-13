@@ -1,26 +1,22 @@
 # vivavideos
 
-A new Flutter project.
+A online catalog to get an overview from newest movies.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+v1 - Everything seems to works like a charm.
 
-A few resources to get you started if this is your first Flutter project:
+## Important Notes
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-dart run build_runner build --delete-conflicting-outputs;  
-
-1234567
-89
-
-
-convert utf-8 to iso-8859-1 to easylly mock jsons
+convert utf-8 to iso-8859-1 to easily mock jsons
 https://www.motobit.com/util/charset-codepage-conversion.asp
+
+you should have the env.json to make this works, but maybe you don't have it :P
+If you do, put this line in you launch.json
+
+  "toolArgs": ["--dart-define-from-file","env.json"]
+
+for build use the same syntax above to build apk
+
+for create the mocks you should run this command
+dart run build_runner build --delete-conflicting-outputs;  
