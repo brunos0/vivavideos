@@ -8,7 +8,8 @@ v1 - Everything seems to works like a charm.
 
 ## ScreenShots
 
-<img src="https://github.com/brunos0/vivavideos/assets/49425249/b4600b6b-0130-4a88-a3c0-c3cb4085affd" width="260"> <img src="https://github.com/brunos0/vivavideos/assets/49425249/13c38b1e-5c52-4f55-8a01-06e3f0adba4d" width="260">
+<img src="https://github.com/brunos0/vivavideos/assets/49425249/b4600b6b-0130-4a88-a3c0-c3cb4085affd" width="260"> <img src="https://github.com/brunos0/vivavideos/assets/49425249/34ffee72-ae9c-4322-ad92-5de4c634de31" width="260">
+
 
 
 ## Important Notes
