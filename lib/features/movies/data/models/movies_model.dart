@@ -1,7 +1,5 @@
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
 import 'package:vivavideos/features/movies/domain/entities/movies.dart';
-//import 'dart:convert';
-//import 'package:vivavideos/core/util/fixture.dart';
 
 class MoviesModel extends Movies {
   const MoviesModel({required List<MovieItem> movies}) : super(movies: movies);
