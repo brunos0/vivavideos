@@ -34,6 +34,8 @@ void main() {
 
   final mockNoInternet = (null, NoInternetException());
 
+  final mockServerFailure = (null, ServerFailure());
+
   void dataSourceGetMovies() => when(mockMoviesRemoteDataSource.getMovies())
       .thenAnswer((_) async => mockDataSourceResult);
 
@@ -72,7 +74,7 @@ void main() {
       // act
       final (success, failure) = await repository.getMovies();
       // assert
-      expect(success, mockRepositoryResult);
+      expect(success, mockDataSourceResult);
     });
 
     test(
@@ -84,7 +86,7 @@ void main() {
       // act
       final (success, failure) = await repository.getMovies();
       // assert
-      expect(failure, ServerFailure());
+      expect((success, failure), mockServerFailure);
     });
   });
 
@@ -96,7 +98,7 @@ void main() {
       // act
       final (success, failure) = await repository.getMovies();
       // assert
-      expect(success, mockNoInternet);
+      expect((success, failure), mockNoInternet);
     });
   });
 }

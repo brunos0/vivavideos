@@ -27,7 +27,6 @@ void main() {
   group('fromJson', () {
     test('should return a valid model when the Json is getter', () async {
       //  arrange
-      //final Map<String, dynamic> jsonMap = json.decode(fixture('movies.json'));
 
       //  act
       final result = MoviesModel.fromJson(jsonMap);

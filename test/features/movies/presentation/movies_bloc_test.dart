@@ -7,9 +7,9 @@ import 'package:vivavideos/core/usecases/usecase.dart';
 import 'package:vivavideos/features/movies/data/models/movies_model.dart';
 import 'package:vivavideos/features/movies/domain/entities/movie_item.dart';
 import 'package:vivavideos/features/movies/domain/usecases/get_movies.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_bloc.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_event.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_state.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_bloc.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_event.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_state.dart';
 
 @GenerateNiceMocks([
   MockSpec<GetMovies>(),
@@ -41,8 +41,6 @@ void main() {
   });
 
   group('GetTriviaForRandomNumber', () {
-    //const tNumberTrivia = NumberTrivia(text: 'test trivia', number: 1);
-
     test('should get data from the use case', () async {
       // arrange
 

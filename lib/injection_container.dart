@@ -8,7 +8,7 @@ import 'package:vivavideos/features/movies/data/datasources/movies_remote_data_s
 import 'package:vivavideos/features/movies/data/repositories/movies_repository_impl.dart';
 import 'package:vivavideos/features/movies/domain/repositories/movies_repository.dart';
 import 'package:vivavideos/features/movies/domain/usecases/get_movies.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_bloc.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_bloc.dart';
 
 final sl = GetIt.instance;
 

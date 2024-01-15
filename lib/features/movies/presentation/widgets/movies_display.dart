@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vivavideos/features/movies/domain/entities/movies.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/widgets/movie_clip.dart';
+import 'package:vivavideos/features/movies/presentation/widgets/movie_clip.dart';
 
 class MoviesDisplay extends StatelessWidget {
   const MoviesDisplay({

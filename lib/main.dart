@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/pages/movie_detail.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/pages/movies_page.dart';
+import 'package:vivavideos/features/movies/presentation/pages/movie_detail.dart';
+import 'package:vivavideos/features/movies/presentation/pages/movies_page.dart';
 
 import 'package:vivavideos/injection_container.dart' as di;
 import 'package:vivavideos/utils/app_routes.dart';

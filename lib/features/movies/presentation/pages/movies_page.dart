@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_bloc.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_event.dart';
-import 'package:vivavideos/features/movies/presentation/features/movies/presentation/bloc/movies_state.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_bloc.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_event.dart';
+import 'package:vivavideos/features/movies/presentation/bloc/movies_state.dart';
 import 'package:vivavideos/injection_container.dart';
 
 import '../widgets/widgets.dart';

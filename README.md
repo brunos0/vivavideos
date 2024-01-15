@@ -4,6 +4,7 @@ A online catalog to get an overview from newest movies.
 
 ## Getting Started
 
+v1.1 - Cleaning the code and fix minor bugs.
 v1 - Everything seems to works like a charm.
 
 ## Important Notes
